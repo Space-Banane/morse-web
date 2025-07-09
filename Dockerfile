@@ -13,7 +13,7 @@ RUN pnpm install
 
 # Copy source code
 COPY . .
-
+RUN npx @tailwindcss/cli -i ./src/assets/input.css -o ./src/assets/styles.css
 # Build the application
 RUN pnpm run build
 
