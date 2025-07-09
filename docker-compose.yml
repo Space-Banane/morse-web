@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  morse-web:
+    build: .
+    container_name: morse-web-app
+    ports:
+      - "6345:80"
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+    networks:
+      - morse-network
+
+networks:
+  morse-network:
+    driver: bridge
